@@ -1,8 +1,4 @@
 **/node_modules
 **/package-lock.json
-public/bundle.**
-public/svelte.**
-**/public
-release-builds
-/public
+dist/
 .DS_Store
