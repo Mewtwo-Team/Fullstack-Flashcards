@@ -25,4 +25,4 @@ const FlashCardDisplay = props => {
     );
 };
 
-export default MarketsDisplay;
+export default FlashCardDisplay;
