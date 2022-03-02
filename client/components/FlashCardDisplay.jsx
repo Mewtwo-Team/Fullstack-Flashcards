@@ -1,19 +1,22 @@
 import React from 'react';
-import FlashCard from './FlashCard';
+import FlashCard from './FlashCard.jsx';
 
 
 const FlashCardDisplay = props => {
 
-    const cards = props.cards;
+    const fetchCards = props.fetchCards;
     const currentQuestionNum = props.currentQuestionNum;
     const frontCard = props.frontCard;
+    const cardList = props.cardList;
+
+    // after useEffect occurs, then state will have all cards in the db (state.cardList); 
 
     return (
         <div className="displayBox">
-            <FlashCard card={props.cards[currentQuestionNum]} frontCard={props.frontCard}/>
-            <button onClick={() => props.previousCard(currentQuestionNum, frontCard)}>Previous</button>
-            <button onClick={() => props.flipCard(frontCard)}>Flip</button>
-            <button onClick={() => props.nextCard(currentQuestionNum, frontCard)}>Next</button>
+            <FlashCard cardList={cardList} currentQuestionNum={currentQuestionNum} fetchCards={fetchCards} frontCard={frontCard}/>
+            <button onClick={() => props.previousCard()}>Previous</button>
+            <button onClick={() => props.flipCard()}>Flip</button>
+            <button onClick={() => props.nextCard()}>Next</button>
             <h3>Difficulty</h3>
             <div>
               <input type="radio" name="radio1" checked="unchecked" onClick={() => props.updateRating(1)}>1</input>

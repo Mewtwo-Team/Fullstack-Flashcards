@@ -12,9 +12,9 @@ export const previousCardActionCreator = () => ({
     type: types.PREVIOUS_CARD
 });
 
-export const updateRatingActionCreator = (cardList) => ({
+export const updateRatingActionCreator = (rating) => ({
     type: types.UPDATE_RATING,
-    payload: cardList
+    payload: rating
 });
 
 export const fetchAllCardsActionCreator = dispatch => {
