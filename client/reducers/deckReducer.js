@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes';
  const initialState = {
    currentQuestionNum: 0,
    frontCard: true,
-   cardList: []
+   cardList: [{card_front: 'hello', card_back: 'world'}]
  };
  
  const deckReducer = (state = initialState, action) => {

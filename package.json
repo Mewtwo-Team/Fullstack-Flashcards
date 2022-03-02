@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon server/server.js",
     "dev": "NODE_ENV=development concurrently  \"nodemon server/server.js\" \"webpack-dev-server --open\""
-
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,8 @@
   "homepage": "https://github.com/Mewtwo-Team/Fullstack-Reinforcement#readme",
   "dependencies": {
     "build": "^0.1.4",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
     "pg": "^8.7.3",

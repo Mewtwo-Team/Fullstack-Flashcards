@@ -1,8 +1,11 @@
 const express = require("express");
 const path = require('path'); 
+const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+app.use(cors());
 
 const cardController = require('./controllers/cardController');
 
