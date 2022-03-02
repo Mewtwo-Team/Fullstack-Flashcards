@@ -13,15 +13,16 @@ import * as types from '../constants/actionTypes';
 
    switch (action.type) {
 
-    case types.RESET_CARDS:
+    case types.RESET_CARDS: {
       currentQuestionNum = 0
     
          return {
            ...state,
            currentQuestionNum
          };
-
+      }
     case types.GET_ALL_CARDS: {
+      console.log('we made fetch happen');
        cardList = state.cardList.slice();
        cardList.push(...action.payload);
        return {
@@ -30,15 +31,16 @@ import * as types from '../constants/actionTypes';
        }
      }
      
-    case types.FLIP_CARD:
-    frontCard = !state.frontCard   
-  
+    case types.FLIP_CARD: {
+    console.log('frontCard:', frontCard);
+    frontCard = !state.frontCard
+   
        return {
          ...state,
          frontCard
        };
- 
-     case types.NEXT_CARD:
+      }
+     case types.NEXT_CARD: {
  
        currentQuestionNum = state.currentQuestionNum + 1; 
        frontCard = !state.frontCard   
@@ -49,8 +51,8 @@ import * as types from '../constants/actionTypes';
          currentQuestionNum,
          frontCard
        };
-
-       case types.PREVIOUS_CARD:
+      }
+       case types.PREVIOUS_CARD: {
  
         currentQuestionNum = state.currentQuestionNum - 1;
         frontCard = !state.frontCard      
@@ -60,8 +62,10 @@ import * as types from '../constants/actionTypes';
            currentQuestionNum,
            frontCard
          };
+
+        }
  
-     case types.UPDATE_RATING:
+     case types.UPDATE_RATING: {
  
        cardList = state.cardList.slice();
        cardList[state.currentQuestionNum][current_score] = action.payload
@@ -70,6 +74,8 @@ import * as types from '../constants/actionTypes';
          ...state,
          cardList
        };
+
+      }
  
      default: {
        return state;

@@ -35,7 +35,7 @@ class FlashCardContainer extends Component {
     return (
       <div className="innerbox">
         { /* add components here... */}
-        <FlashCardDisplay cardList={this.props.cardList} fetchCards={this.props.fetchCards} nextCard= {this.props.nextCard} previousCard={this.props.previousCard} flipCard= {this.props.flipCard} updateRating={this.props.updateRating} currentQuestionNum={this.props.currentQuestionNum} frontCard={this.props.frontCard} />
+        <FlashCardDisplay cardList={this.props.cardList} fetchCards={this.props.fetchCards} nextCard= {this.props.nextCard} previousCard={this.props.previousCard} flipCard={this.props.flipCard} updateRating={this.props.updateRating} currentQuestionNum={this.props.currentQuestionNum} frontCard={this.props.frontCard} />
       </div>
     );
   }
