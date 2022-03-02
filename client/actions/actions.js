@@ -1,7 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 export const flipCardActionCreator = () => ({
-    type: types.FLIP_CARD
+    type: types.FLIP_CARD,
 });
 
 export const nextCardActionCreator = () => ({

@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FlashCard from './FlashCard.jsx';
 
 
 const FlashCardDisplay = props => {
 
+    
+ 
+
     const fetchCards = props.fetchCards;
     const currentQuestionNum = props.currentQuestionNum;
-    // console.log('current q here', currentQuestionNum);
     const frontCard = props.frontCard;
     const cardList = props.cardList;
-    console.log('value of card front:', frontCard);
+    const flipCard = props.flipCard;
+    const previousCard = props.previousCard;
+    const nextCard = props.nextCard;
+    
+    // useEffect(() => {
+    //     props.flipCard()
+    // }, [frontCard])
+
 
     // after useEffect occurs, then state will have all cards in the db (state.cardList); 
 
     return (
         <div className="displayBox">
             <FlashCard cardList={cardList} currentQuestionNum={currentQuestionNum} fetchCards={fetchCards} frontCard={frontCard}/>
-            <button onClick={() => props.previousCard()}>Previous</button>
+            <button onClick={() => previousCard()}>Previous</button>
             <button onClick={() => props.flipCard()}>Flip</button>
-            <button onClick={() => props.nextCard()}>Next</button>
+            <button onClick={() => nextCard()}>Next</button>
             <h3>Difficulty</h3>
             <div>
             <form>
