@@ -1,21 +1,14 @@
-import React, { useEffect }  from 'react';
+import React from 'react';
 
 
 const TotalsDisplay = props => {
 
-    useEffect(() => {
-        props.fetchCards()
-    }, [])
+    <div className="innerbox" id="totals">
+        <button onClick={() => props.resetCards()}>Reset Cards</button>
 
-    return (
-        <div className="innerbox" id="totals">
-            <label htmlFor="totalCards">Total Cards:</label>
-            <span id="totalCards">{props.totalCards}</span>
-            <p>
-                <label htmlFor="totalMarkets">Total Markets:</label>
-                <span id="totalCards">{props.totalMarkets}</span>
-            </p>
-        </div>
-    );
+        <span id="totalCards">Question number {props.currentQuestionNum} out of {props.totalCards} questions</span>
+
+    </div>
+
 };
 export default TotalsDisplay;

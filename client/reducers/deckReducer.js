@@ -13,6 +13,14 @@ import * as types from '../constants/actionTypes';
 
    switch (action.type) {
 
+    case types.RESET_CARDS:
+      currentQuestionNum = 0
+    
+         return {
+           ...state,
+           currentQuestionNum
+         };
+
     case types.GET_ALL_CARDS: {
        cardList = state.cardList.slice();
        cardList.push(...action.payload);

@@ -1,23 +1,19 @@
 import * as types from '../constants/actionTypes';
 
-export const flipCardActionCreator = frontCard => ({
-    type: types.FLIP_CARD,
-    payload: frontCard,
+export const flipCardActionCreator = () => ({
+    type: types.FLIP_CARD
 });
 
-export const nextCardActionCreator = currentQuestionNum => ({
-    type: types.NEXT_CARD,
-    payload: currentQuestionNum,
+export const nextCardActionCreator = () => ({
+    type: types.NEXT_CARD
 });
 
-export const previousCardActionCreator = currentQuestionNum => ({
-    type: types.PREVIOUS_CARD,
-    payload: currentQuestionNum,
+export const previousCardActionCreator = () => ({
+    type: types.PREVIOUS_CARD
 });
 
-export const updateRatingActionCreator = cardList => ({
-    type: types.UPDATE_RATING,
-    payload: cardList,
+export const updateRatingActionCreator = () => ({
+    type: types.UPDATE_RATING
 });
 
 export const fetchAllCardsActionCreator = dispatch => {
@@ -34,4 +30,8 @@ export const fetchAllCardsActionCreator = dispatch => {
             console.log(err);
         })
 };
+
+export const resetCardsActionCreator = () => ({
+    type: types.RESET_CARDS
+});
 
