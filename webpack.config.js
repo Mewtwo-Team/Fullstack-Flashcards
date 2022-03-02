@@ -8,7 +8,7 @@ module.exports = {
    path: path.join(__dirname, '/dist'),
    filename: 'index.bundle.js'
  },
- mode: 'production',
+ mode: 'development',
   // Rules of how webpack will take our files, complie & bundle them for the browser 
   performance: {
     hints: false,
@@ -35,5 +35,18 @@ module.exports = {
     }
    ]
  },
- plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
-}
+ plugins: [
+   new HtmlWebpackPlugin({
+      title: 'Development',
+      template: './index.html' 
+    }),
+    
+    ],
+  devServer: {
+    proxy: {
+      '/':'http://localhost:3000'
+    },
+    port: 8080
+
+  }
+};

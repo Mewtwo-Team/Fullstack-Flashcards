@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require('path'); 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // for serving css or additional js files 
-// app.use(express.static(path.join(__dirname, '../assets/')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/api', cardController.getCards, (req, res) => {
     res.status(200).json(res.locals.cards);
@@ -27,7 +27,7 @@ app.post('/cards', cardController.addCard, (req, res) => {
 
 
 app.get('/', function (req, res) { 
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.sendFile(path.join(__dirname, '../index.html'));
   });
 
 app.use('*', (req, res) => res.status(404).type('txt').send('404 Not Found'));
