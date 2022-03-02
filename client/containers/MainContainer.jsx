@@ -14,8 +14,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    resetCards: (e) => dispatch(actions.resetCardsActionCreator(e)),
-    fetchCards: () => actions.fetchAllCardsActionCreator(dispatch)
+    resetCards: () => dispatch(actions.resetCardsActionCreator())
 });
 
 class MainContainer extends Component {
@@ -31,7 +30,7 @@ class MainContainer extends Component {
                 <div className="outerBox">
                     <h1 id="header">FullStack Flash Cards</h1>
                     { /* note: can we get cardListLength this way with mapStateToProps?... */}
-                    <TotalsDisplay fetchCards={this.props.fetchCards} totalCards={this.props.cardListLength} currentQuestionNum={this.props.currentQuestionNum} />
+                    <TotalsDisplay totalCards={this.props.cardListLength} currentQuestionNum={this.props.currentQuestionNum} />
                     <FlashCardContainer />
                 </div>
             </div>
