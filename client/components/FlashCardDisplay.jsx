@@ -10,7 +10,7 @@ const FlashCardDisplay = props => {
 
     return (
         <div className="displayBox">
-            <FlashCard card={props.cards[currentQuestionNum]}/>
+            <FlashCard card={props.cards[currentQuestionNum]} frontCard={props.frontCard}/>
             <button onClick={() => props.previousCard(currentQuestionNum, frontCard)}>Previous</button>
             <button onClick={() => props.flipCard(frontCard)}>Flip</button>
             <button onClick={() => props.nextCard(currentQuestionNum, frontCard)}>Next</button>
