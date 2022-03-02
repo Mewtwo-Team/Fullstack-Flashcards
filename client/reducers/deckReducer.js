@@ -69,4 +69,6 @@ import * as types from '../constants/actionTypes';
    }
  };
  
- export default deckReducer;
+export default deckReducer;
+
+const trackerTableReducer = 
