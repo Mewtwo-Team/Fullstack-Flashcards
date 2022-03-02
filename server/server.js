@@ -18,16 +18,16 @@ app.post('/cards', cardController.addCard, (req, res) => {
 
 app.use('*', (req, res) => res.status(404).type('txt').send('404 Not Found'));
 
-// app.use((err, req, res, next) => {
-//     const defaultErr = {
-//         log: 'Express error handler caught unknown middleware error',
-//         status: 500,
-//         message: { err: 'An error occured' },
-//     };
-//     const errorObj = Object.assign({}, defaultErr, err);
-//     console.log(errorObj.log);
-//     return res.status(errorObj.status).json(errorObj.message);
-// });
+app.use((err, req, res, next) => {
+    const defaultErr = {
+        log: 'Express error handler caught unknown middleware error',
+        status: 500,
+        message: { err: 'An error occured' },
+    };
+    const errorObj = Object.assign({}, defaultErr, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
