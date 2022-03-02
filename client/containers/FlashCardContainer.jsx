@@ -10,7 +10,7 @@ import FlashCardDisplay from '../components/FlashCardDisplay.jsx';
 const mapStateToProps = state => ({
   // provide pertinent state here
   currentQuestionNum: state.currentQuestionNum,
-  cardFront: state.cardFront,
+  frontCard: state.frontCard,
   cardList: state.cardList
 });
 
@@ -31,10 +31,11 @@ class FlashCardContainer extends Component {
   }
 
   render() {
+    console.log('here are props', this.props);
     return (
       <div className="innerbox">
         { /* add components here... */}
-        <FlashCardDisplay cardList={this.props.cardList} fetchCards={this.props.fetchCards} nextCard= {this.props.nextCard} previousCard={this.props.previousCard} flipCard= {this.props.flipCard} updateRating={this.props.updateRating} currentQuestionNum={this.props.currentQuestionNum} cardFront={this.props.cardFront} />
+        <FlashCardDisplay cardList={this.props.cardList} fetchCards={this.props.fetchCards} nextCard= {this.props.nextCard} previousCard={this.props.previousCard} flipCard= {this.props.flipCard} updateRating={this.props.updateRating} currentQuestionNum={this.props.currentQuestionNum} frontCard={this.props.frontCard} />
       </div>
     );
   }
