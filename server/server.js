@@ -1,6 +1,6 @@
 const express = require("express");
-
-const PORT = process.env.PORT || 3000;
+const path = require('path'); 
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -8,13 +8,27 @@ const cardController = require('./controllers/cardController');
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/cards', cardController.getCards, (req, res) => {
+app.use(express.json());
+
+// for serving css or additional js files 
+// app.use(express.static(path.join(__dirname, '../assets/')));
+
+app.get('/api', cardController.getCards, (req, res) => {
     res.status(200).json(res.locals.cards);
 });
 
 app.post('/cards', cardController.addCard, (req, res) => {
     res.status(200).json(res.locals.cards);
 });
+
+//for updating the difficulty score of the card 
+// app.patch('/cards', (req, res) => { 
+// })
+
+
+app.get('/', function (req, res) { 
+    res.sendFile(path.join(__dirname, './index.html'));
+  });
 
 app.use('*', (req, res) => res.status(404).type('txt').send('404 Not Found'));
 

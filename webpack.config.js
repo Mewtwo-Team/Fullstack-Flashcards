@@ -10,6 +10,12 @@ module.exports = {
  },
  mode: 'production',
   // Rules of how webpack will take our files, complie & bundle them for the browser 
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+},
+
  module: {
    rules: [
      {

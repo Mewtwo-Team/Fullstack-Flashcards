@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const FlashCard = props => {
+  const FlashCard = props => {
 
-    const card = props.card;
+    useEffect(() => {
+        props.fetchCards()
+    }, [])
+
     const frontCard = props.frontCard;
-
+    const cardList = props.cardList;
+    const currentQuestionNum = props.currentQuestionNum; 
     let cardSideToDisplay;
 
+ // receive an array of objects 
+ // we want the card at index[currentQuestionNum]
     if (frontCard) {
-        cardSideToDisplay = card[card_front]
+        cardSideToDisplay = cardList[currentQuestionNum].card_front;
     }
-    if (!frontCard) {
-        cardSideToDisplay = card[card_back]
+    else {
+        cardSideToDisplay = cardList[currentQuestionNum].card_back; 
     } 
 
     return (
