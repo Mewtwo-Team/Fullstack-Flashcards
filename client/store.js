@@ -18,7 +18,10 @@
  const initialState = {
   currentQuestionNum: 0,
   frontCard: true,
-  cardList: [{card_front: 'hello', card_back: 'world'}]
+  cardList: [{card_front: 'A JavaScript library for building user interfaces with re-usable components', card_back: 'React'},
+  {card_front: 'A state management library with single source of thruth', card_back: 'Redux'},
+  {card_front: 'A radical new approach to building user interfaces without the need to virtual DOM diffing', card_back: 'Svelte'}
+ ]
 };
  
  

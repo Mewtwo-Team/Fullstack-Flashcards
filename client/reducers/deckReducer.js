@@ -15,7 +15,6 @@ import * as types from '../constants/actionTypes';
 
     case types.RESET_CARDS: {
       currentQuestionNum = 0
-    
          return {
            ...state,
            currentQuestionNum
@@ -68,7 +67,7 @@ import * as types from '../constants/actionTypes';
      case types.UPDATE_RATING: {
  
        cardList = state.cardList.slice();
-       cardList[state.currentQuestionNum][current_score] = action.payload
+       cardList[state.currentQuestionNum].current_score = action.payload
 
        return {
          ...state,

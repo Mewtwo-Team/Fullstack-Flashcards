@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // for serving css or additional js files 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.resolve(__dirname, '../client/static')));
 
 app.get('/api', cardController.getCards, (req, res) => {
     res.status(200).json(res.locals.cards);
