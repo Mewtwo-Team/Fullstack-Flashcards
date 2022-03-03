@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-
+import * as actions from '../actions/actions';
 
 // import from child components...
 import TotalsDisplay from '../components/TotalsDisplay.jsx';
